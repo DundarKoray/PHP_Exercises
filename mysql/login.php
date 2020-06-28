@@ -11,6 +11,14 @@
             die("Database connection fail");
         }
 
+        $query = "INSERT INTO users(username, password) ";
+        $query .= "VALUES ('$username', '$password')";
+
+        $result = mysqli_query($connection, $query);
+
+        if(!$result) {
+           die('Query FAILED' . mysqli_error()); 
+        }
 
         // if($username && $password) {
         //     echo $username . "<br/>";
